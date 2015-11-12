@@ -59,7 +59,7 @@
 .footer {
   position: absolute;
   width: 100%;
-  height: 75px;
+  height: 50px;
   /*background-color: blue;*/
   bottom: 0;
 }
@@ -69,7 +69,7 @@
   font-size: 10px;
 }
 
-/*Page wrapper*/
+/*PAGE WRAPPER*/
 .wrapper {
   /*background-color: grey;*/
   width: 100%;
@@ -79,7 +79,7 @@
   top: 0;
 }
 
-/*Login*/
+/*LOGIN*/
 .header {
   position: absolute;
   width: 100%;
@@ -103,5 +103,10 @@
 }
 
 #logout {
+  display: none;
+}
+
+/*REGISTER*/
+.register-wrapper {
   display: none;
 }
