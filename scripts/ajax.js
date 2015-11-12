@@ -3,6 +3,8 @@ $(document).ready(function() {
   var token = '';
   var id = '';
 
+  $("#profile").hide();
+
   // REGISTER REQUEST
   $("#register").on('submit', function(event) {
     event.preventDefault();
@@ -43,6 +45,7 @@ $(document).ready(function() {
       $("#login").hide();
       $("#open-register").hide();
       $("#logout").show();
+      $("#profile").show();
       token = data.user.token;
       id = data.user.id;
     }).fail(function(){
@@ -124,7 +127,15 @@ $(document).ready(function() {
   // $("").on('click', function(event){
     // $.ajax({
       // method: 'GET',
-      // url: inspire_url + '/profiles/id'
+      // url: inspire_url + '/profiles/' + id,
+      // headers: {
+        // Authorization: 'Token token=' + token
+      // },
+      // contentType: 'application/json'
+    // }).done(function(){
+      // console.log("success");
+    // }).fail(function(){
+      // console.log("error")
     // })
   // });
 
@@ -136,6 +147,10 @@ $(document).ready(function() {
       // headers: {
         // Authorization: 'Token token=' + token
       // }
+    // }).done(function(data){
+    //   console.log("success");
+    // }).fail(function(){
+    //   console.log("error");
     // })
   // });
 
@@ -147,6 +162,10 @@ $(document).ready(function() {
       // headers: {
         // Authorization: 'Token token=' + token
       // }
+    // }).done(function(data){
+    //   console.log("success");
+    // }).fail(function(){
+    //   console.log("error");
     // })
   // });
 
@@ -181,6 +200,10 @@ $(document).ready(function() {
     // $.ajax({
       // method: 'GET',
       // url: inspire_url + '/images/id'
+    // }).done(function(data){
+    //   console.log("success");
+    // }).fail(function(){
+    //   console.log("error");
     // })
   // });
 
@@ -192,6 +215,10 @@ $(document).ready(function() {
       // headers: {
         // Authorization: 'Token token=' + token
       // }
+    // }).done(function(data){
+    //   console.log("success");
+    // }).fail(function(){
+    //   console.log("error");
     // })
   // });
 
@@ -203,6 +230,10 @@ $(document).ready(function() {
       // headers: {
         // Authorization: 'Token token=' + token
       // }
+    // }).done(function(data){
+    //   console.log("success");
+    // }).fail(function(){
+    //   console.log("error");
     // })
   // });
 
