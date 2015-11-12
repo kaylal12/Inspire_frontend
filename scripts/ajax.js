@@ -1,58 +1,7 @@
-// 'use strict'
-// var inspireapi = {
-//   inspire: 'http://localhost:3000',
-
-//   register: function register(credentials, callback) {
-//     $.ajax({
-//       method: 'POST',
-//       url: this.inspire + '/register',
-//       contentType: 'application/json; charset=utf-8',
-//       data: JSON.stringify(credentials),
-//       dataType: 'json'
-//     }, callback);
-//   }
-// };
-
-// $(document).ready(function(){
-
-//   var form2object = function(form) {
-//     var data = {};
-//     $(form).children().each(function(index, element) {
-//       var type = $(this).attr('type');
-//       if ($(this).attr('name') && type !== 'submit' && type !== 'hidden') {
-//         data[$(this).attr('name')] = $(this).val();
-//       }
-//     });
-//     return data;
-//   };
-
-//   var wrap = function wrap(root, formData) {
-//     var wrapper = {};
-//     wrapper[root] = formData;
-//     return wrapper;
-//   };
-
-//   var callback = function callback(error, data) {
-//     if (error) {
-//       console.error(error);
-//       $('#result').val('status: ' + error.status + ', error: ' +error.error);
-//       return;
-//     }
-//     $('#result').val(JSON.stringify(data, null, 4));
-//   };
-
-//   $('#register').on('submit', function(e) {
-//     var credentials = wrap('credentials', form2object(this));
-//     inspireapi.register(credentials, callback);
-//     e.preventDefault();
-//   });
-// });
-
-var token = '';
-var id = '';
-
 $(document).ready(function() {
-  var inspire_url = 'http://localhost:3000'
+  var inspire_url = 'http://localhost:3000';
+  var token = '';
+  var id = '';
 
   // REGISTER REQUEST
   $("#register").on('submit', function(event) {
@@ -118,13 +67,17 @@ $(document).ready(function() {
   });
 
   // 'GET' /profiles REQUEST
-  // $(".explore-profiles").on('click', function(event){
-    // $.ajax({
-      // method: 'GET',
-      // url: inspire_url + '/profiles',
-      // contentType: 'application/json'
-    // })
-  // })
+  $("#profiles").on('click', function(event){
+    $.ajax({
+      method: 'GET',
+      url: inspire_url + '/profiles',
+      contentType: 'application/json'
+    }).done(function(data){
+      console.log("success");
+    }).fail(function(){
+      console.log("error");
+    })
+  });
 
   // 'GET' /images REQUEST
   // $(".explore-photos").on('click', function(event){

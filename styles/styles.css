@@ -25,7 +25,7 @@
   padding: 0;
 }
 
-.sidebar-inner-nav {
+/*.sidebar-inner-nav {
   position: relative;
   top: -45px;
   left: 250px;
@@ -35,7 +35,7 @@
   width: 75%;
   height: 100%;
   background-color: #D4EDF4;
-}
+}*/
 
 .sidebar-nav a {
   padding-top: 10px;
