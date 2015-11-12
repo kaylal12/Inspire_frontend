@@ -121,7 +121,7 @@ $(document).ready(function() {
       })
     };
 
-    $fileInput = $('#profile_picture');
+    $fileInput = $('#profile-picture');
     reader.readAsDataURL($fileInput[0].files[0]);
 
   });

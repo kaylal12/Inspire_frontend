@@ -8,4 +8,8 @@ $(document).ready(function(){
     $(".register-wrapper").fadeOut(350);
   });
 
+  $("#profile").on('click', function(event){
+    $(".user-profile").show();
+  })
+
 });
