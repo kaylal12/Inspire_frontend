@@ -143,32 +143,41 @@ $(document).ready(function() {
   // });
 
   // 'PATCH' /profiles/id REQUEST
-  // $("#edit-profile").on('click', function(event){
-  //   $.ajax({
-  //     method: 'PATCH',
-  //     url: inspire_url + '/profiles/' + id
-  //     headers: {
-  //       Authorization: 'Token token=' + token
-  //     },
-  //     data: {
-  //       profile: {
-  //         first_name: $('#first-name').val(),
-  //         last_name: $('#last-name').val(),
-  //         description: $("#description").val(),
-  //         profile_picture: event.target.result
-  //     } }
-  //   }).done(function(){
-  //     console.log("success");
-  //   }).fail(function(){
-  //     console.log("error");
-  //   })
-  // });
+  $('#edit-profile').on('click', function(e){
+    e.preventDefault();
+    var reader = new FileReader();
+
+    reader.onload = function(event){
+      $.ajax({
+        url: inspire_url + '/profiles/' + id,
+        method: 'PATCH',
+        data: { profile: {
+          first_name: $('#first-name').val(),
+          last_name: $('#last-name').val(),
+          description: $("#description").val(),
+          profile_picture: event.target.result,
+          user_id: id
+        } },
+        headers: {
+          Authorization: 'Token token=' + token
+        }
+      }).done(function(data){
+        console.log('Success');
+      }).fail(function(response){
+        console.error('Whoops!');
+      })
+    };
+
+    $fileInput = $('#profile-picture');
+    reader.readAsDataURL($fileInput[0].files[0]);
+
+  });
 
   // 'DELETE' /profiles/id REQUEST
   $("#delete-profile").on('click', function(event){
     $.ajax({
       method: 'DELETE',
-      url: inspire_url + '/profiles/' +,
+      url: inspire_url + '/profiles/' + id,
       headers: {
         Authorization: 'Token token=' + token
       }
