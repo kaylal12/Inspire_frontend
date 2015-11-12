@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" type="text/css" href="styles/reset.css">
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 </head>
 
 <body>
@@ -33,8 +34,6 @@
 
     <div class="user-profile">
       <form id="create-profile">
-        <input id="delete-profile" type="button" value="Delete">
-        <input id="edit-profile" type="button" value="Edit">
         <label> First Name
           <input id="first-name" type="text">
         </label>
@@ -59,20 +58,57 @@
         </label>
         <input name="post" type="submit" value="Create Post">
       </form>
+
+      <div class="created-profile">
+        <input id="delete-profile" type="button" value="Delete">
+        <input id="edit-profile" type="button" value="Edit">
+        <div class="profile-picture"></div>
+        <div class="profile-description"></div>
+        <div class="profile-images">
+          <!-- <form id="image-upload">
+            <label> Caption
+              <input type="text" id="caption">
+            </label>
+            <label> Upload Image
+              <input type="file" id="image">
+            </label>
+            <input name="post" type="submit" value="Create Post">
+          </form> -->
+        </div>
+      </div>
+
     </div>
 
     <div class="explore-profiles">
+      <div class="profile-row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8"></div>
+      </div>
+      <div class="profile-row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8"></div>
+      </div>
     </div>
 
     <div class="explore-photos">
-    </div>
-
-    <div class="photo">
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+      </div>
     </div>
 
   </div>
-
-
 
   <div class="sidebar-wrapper">
       <!-- <h3>Menu</h3> -->
@@ -118,6 +154,14 @@
       <div class="complete-registration">
         <h3> Registration Complete! </h3>
       </div>
+      <a href="#" class="close">x</a>
+    </div>
+  </div>
+
+  <div class="image-wrapper">
+    <div class="image-box">
+      <div class="image"></div>
+      <div class="caption"></div>
       <a href="#" class="close">x</a>
     </div>
   </div>
