@@ -105,8 +105,8 @@ $(document).ready(function() {
         url: inspire_url + '/profiles',
         method: 'POST',
         data: { profile: {
-          first_name: $('#first_name').val(),
-          last_name: $('#last_name').val(),
+          first_name: $('#first-name').val(),
+          last_name: $('#last-name').val(),
           description: $("#description").val(),
           profile_picture: event.target.result,
           user_id: id
@@ -114,7 +114,7 @@ $(document).ready(function() {
         headers: {
           Authorization: 'Token token=' + token
         }
-      }).done(function(response){
+      }).done(function(data){
         console.log('Success');
       }).fail(function(response){
         console.error('Whoops!');
@@ -173,30 +173,33 @@ $(document).ready(function() {
   // });
 
   // 'POST' /images REQUEST
-  // $('#image-upload').on('submit', function(e){
-  //   e.preventDefault();
-  //   var reader = new FileReader();
+  $('#image-upload').on('submit', function(e){
+    e.preventDefault();
+    var reader = new FileReader();
 
-  //   reader.onload = function(event){
-  //     $.ajax({
-  //       url: inspire_url + '/images',
-  //       method: 'POST',
-  //       data: { images: {
-  //         caption: $('#caption').val(),
-  //         image_post: event.target.result,
-  //         // user_id: ?
-  //       } }
-  //     }).done(function(response){
-  //       console.log('Success');
-  //     }).fail(function(response){
-  //       console.error('Whoops!');
-  //     })
-  //   };
+    reader.onload = function(event){
+      $.ajax({
+        url: inspire_url + '/images',
+        method: 'POST',
+        data: { images: {
+          caption: $("#caption").val(),
+          image_post: event.target.result,
+          profile_id: id
+        } },
+        headers: {
+          Authorization: 'Token token=' + token
+        }
+      }).done(function(response){
+        console.log('Success');
+      }).fail(function(response){
+        console.error('Whoops!');
+      })
+    };
 
-  //   $fileInput = $('#profile_picture');
-  //   reader.readAsDataURL($fileInput[0].files[0]);
+    $fileInput = $('#image');
+    reader.readAsDataURL($fileInput[0].files[0]);
 
-  // });
+  });
 
   // 'GET' /images/id REQUEST
   // $("").on('click', function(event){
