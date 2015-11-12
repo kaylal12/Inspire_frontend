@@ -80,12 +80,17 @@ $(document).ready(function() {
   });
 
   // 'GET' /images REQUEST
-  // $(".explore-photos").on('click', function(event){
-    // $.ajax({
-      // method: 'GET',
-      // url: inspire_url + '/images'
-    // })
-  // })
+  $("#photos").on('click', function(event){
+    $.ajax({
+      method: 'GET',
+      url: inspire_url + '/images',
+      contentType: 'json'
+    }).done(function(data){
+      console.log("success");
+    }).fail(function(){
+      console.log("error");
+    })
+  });
 
   // 'POST' /profiles REQUEST
   $('#create-profile').on('submit', function(e){
