@@ -108,5 +108,63 @@
 
 /*REGISTER*/
 .register-wrapper {
+  position: fixed;
+  background: rgba(0,0,0,0.75);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
   display: none;
+}
+
+.register-box {
+  position: absolute;
+  background-color: #D4EDF4;
+  width: 45%;
+  height: 250px;
+  top: 150px;
+  left: 325px;
+  padding: 40px;
+  border-radius: 5%;
+}
+
+.register-box h2 {
+  text-align: center;
+}
+
+#register {
+  text-align: center;
+}
+
+.submit-button {
+  margin: 10px;
+  width: 100px;
+  background-color: pink;
+}
+
+.submit-button:hover {
+  background-color: white;
+}
+
+.complete-registration {
+  display: none;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  padding-top: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  background-color: grey;
+  border-radius: 50%;
+  color: white;
+}
+
+.close:hover {
+  background-color: white;
 }
