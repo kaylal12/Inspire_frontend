@@ -22,4 +22,23 @@ $(document).ready(function() {
       console.log("error");
     });
   });
+
+  // LOGIN REQUEST
+  $("#login").on('submit', function(event) {
+    $.ajax({
+      method: 'POST',
+      url: inspire_url + '/login',
+      data: {
+        credentials: {
+          email: $('#user_email').val(),
+          password: $('#user_password').val()
+        }
+      }
+    }).done(function(){
+      $("#login").hide();
+      $("#logout").show();
+    }).fail(function(){
+      console.log("error");
+    });
+  });
 });
