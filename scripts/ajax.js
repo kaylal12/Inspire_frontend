@@ -109,8 +109,11 @@ $(document).ready(function() {
           last_name: $('#last_name').val(),
           description: $("#description").val(),
           profile_picture: event.target.result,
-          // user_id: ?
-        } }
+          user_id: id
+        } },
+        headers: {
+          Authorization: 'Token token=' + token
+        }
       }).done(function(response){
         console.log('Success');
       }).fail(function(response){
