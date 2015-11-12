@@ -193,7 +193,7 @@
 /*USER PROFILE*/
 .user-profile {
   position: absolute;
-  display: none;
+  /*display: none;*/
   width: 100%;
   height: 100%;
   float: right;
@@ -207,9 +207,9 @@
   left: 25%;
 }
 
-.created-profile {
+/*.created-profile {
   display: none;
-}
+}*/
 
 .profile-picture {
   position: absolute;
