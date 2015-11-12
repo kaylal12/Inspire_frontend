@@ -48,6 +48,9 @@
 //   });
 // });
 
+var token = '';
+var id = '';
+
 $(document).ready(function() {
   var inspire_url = 'http://localhost:3000'
 
@@ -76,6 +79,7 @@ $(document).ready(function() {
 
   // LOGIN REQUEST
   $("#login").on('submit', function(event) {
+    event.preventDefault();
     $.ajax({
       method: 'POST',
       url: inspire_url + '/login',
@@ -86,31 +90,39 @@ $(document).ready(function() {
         }
       }),
       contentType: 'application/json'
-    }).done(function(){
+    }).done(function(data){
       $("#login").hide();
       $("#open-register").hide();
       $("#logout").show();
+      token = data.user.token;
+      id = data.user.id;
     }).fail(function(){
       console.log("error");
     });
   });
 
   // LOGOUT REQUEST
-  // $("#logout").on('click', function(event){
-  //   $.ajax({
-  //     method: 'DELETE',
-  //     url: inspire_url + '/logout' // + id?
-  //     headers: {
-  //       Authorization: 'Token token=' + token
-  //     }
-  //   })
-  // });
+  $("#logout").on('click', function(event){
+    $.ajax({
+      method: 'DELETE',
+      url: inspire_url + '/logout/' + id,
+      headers: {
+        Authorization: 'Token token=' + token
+      }
+    }).done(function(){
+      $("#login").show();
+      $("#open-register").show();
+    }).fail(function(){
+      console.log("error");
+    })
+  });
 
   // 'GET' /profiles REQUEST
   // $(".explore-profiles").on('click', function(event){
     // $.ajax({
       // method: 'GET',
-      // url: inspire_url + '/profiles'
+      // url: inspire_url + '/profiles',
+      // contentType: 'application/json'
     // })
   // })
 
