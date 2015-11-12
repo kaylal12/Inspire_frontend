@@ -190,3 +190,20 @@
   background-size: cover;
 }
 
+/*USER PROFILE*/
+.user-profile {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  float: right;
+  top: 0;
+  background-color: pink;
+}
+
+#create-profile {
+  position: absolute;
+  top: 50px;
+  left: 25%;
+}
+
