@@ -2,6 +2,7 @@ $(document).ready(function() {
   var inspire_url = 'http://localhost:3000';
   var token = '';
   var id = '';
+  var image_id = '';
 
   $("#profile").hide();
 
@@ -75,19 +76,6 @@ $(document).ready(function() {
       method: 'GET',
       url: inspire_url + '/profiles',
       contentType: 'application/json'
-    }).done(function(data){
-      console.log("success");
-    }).fail(function(){
-      console.log("error");
-    })
-  });
-
-  // 'GET' /images REQUEST
-  $("#photos").on('click', function(event){
-    $.ajax({
-      method: 'GET',
-      url: inspire_url + '/images',
-      contentType: 'json'
     }).done(function(data){
       console.log("success");
     }).fail(function(){
@@ -188,6 +176,19 @@ $(document).ready(function() {
     })
   });
 
+    // 'GET' /images REQUEST
+  $("#photos").on('click', function(event){
+    $.ajax({
+      method: 'GET',
+      url: inspire_url + '/images',
+      contentType: 'json'
+    }).done(function(data){
+      console.log("success");
+    }).fail(function(){
+      console.log("error");
+    })
+  });
+
   // 'POST' /images REQUEST
   $('#image-upload').on('submit', function(e){
     e.preventDefault();
@@ -205,7 +206,8 @@ $(document).ready(function() {
         headers: {
           Authorization: 'Token token=' + token
         }
-      }).done(function(response){
+      }).done(function(data){
+        image_id = data.user.profile.images.find(params[id]);
         console.log('Success');
       }).fail(function(response){
         console.error('Whoops!');
