@@ -143,34 +143,41 @@ $(document).ready(function() {
   // });
 
   // 'PATCH' /profiles/id REQUEST
-  // $("").on('click', function(event){
-    // $.ajax({
-      // method: 'PATCH',
-      // url: inspire_url + '/profiles/id'
-      // headers: {
-        // Authorization: 'Token token=' + token
-      // }
-    // }).done(function(data){
-    //   console.log("success");
-    // }).fail(function(){
-    //   console.log("error");
-    // })
+  // $("#edit-profile").on('click', function(event){
+  //   $.ajax({
+  //     method: 'PATCH',
+  //     url: inspire_url + '/profiles/' + id
+  //     headers: {
+  //       Authorization: 'Token token=' + token
+  //     },
+  //     data: {
+  //       profile: {
+  //         first_name: $('#first-name').val(),
+  //         last_name: $('#last-name').val(),
+  //         description: $("#description").val(),
+  //         profile_picture: event.target.result
+  //     } }
+  //   }).done(function(){
+  //     console.log("success");
+  //   }).fail(function(){
+  //     console.log("error");
+  //   })
   // });
 
   // 'DELETE' /profiles/id REQUEST
-  // $("").on('click', function(event){
-    // $.ajax({
-      // method: 'DELETE',
-      // url: inspire_url + '/profiles/id'
-      // headers: {
-        // Authorization: 'Token token=' + token
-      // }
-    // }).done(function(data){
-    //   console.log("success");
-    // }).fail(function(){
-    //   console.log("error");
-    // })
-  // });
+  $("#delete-profile").on('click', function(event){
+    $.ajax({
+      method: 'DELETE',
+      url: inspire_url + '/profiles/' +,
+      headers: {
+        Authorization: 'Token token=' + token
+      }
+    }).done(function(){
+      console.log("success");
+    }).fail(function(){
+      console.log("error");
+    })
+  });
 
   // 'POST' /images REQUEST
   $('#image-upload').on('submit', function(e){
