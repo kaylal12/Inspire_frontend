@@ -58,13 +58,14 @@ $(document).ready(function() {
     $.ajax({
       method: 'POST',
       url: inspire_url + '/register',
-      data: {
+      data: JSON.stringify({
         credentials: {
           email: $('#email').val(),
           password: $('#password').val(),
           password_confirmation: $('#password_confirmation').val()
         }
-      }
+      }),
+      contentType: 'application/json'
     }).done(function(){
       $("#register").hide();
       $(".complete-registration").fadeIn();
@@ -78,14 +79,16 @@ $(document).ready(function() {
     $.ajax({
       method: 'POST',
       url: inspire_url + '/login',
-      data: {
+      data: JSON.stringify({
         credentials: {
           email: $('#user_email').val(),
           password: $('#user_password').val()
         }
-      }
+      }),
+      contentType: 'application/json'
     }).done(function(){
       $("#login").hide();
+      $("#open-register").hide();
       $("#logout").show();
     }).fail(function(){
       console.log("error");
@@ -94,13 +97,13 @@ $(document).ready(function() {
 
   // LOGOUT REQUEST
   // $("#logout").on('click', function(event){
-    // $.ajax({
-      // method: 'DELETE',
-      // url: inspire_url + '/logout/id'
-      // headers: {
-        // Authorization: 'Token token=' + token
-      // }
-    // })
+  //   $.ajax({
+  //     method: 'DELETE',
+  //     url: inspire_url + '/logout' // + id?
+  //     headers: {
+  //       Authorization: 'Token token=' + token
+  //     }
+  //   })
   // });
 
   // 'GET' /profiles REQUEST
