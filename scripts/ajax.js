@@ -67,9 +67,10 @@ $(document).ready(function() {
       }
     }).done(function(){
       $("#login").show();
+      $("#logout").hide();
       $("#open-register").show();
-      $(".page-content").hide();
       $(".user-profile").hide();
+      $(".edit-profile-page").hide();
       $(".explore-profiles").hide();
       $(".explore-photos").hide();
     }).fail(function(){
@@ -165,17 +166,28 @@ $(document).ready(function() {
         url: inspire_url + '/profiles/' + id,
         method: 'PATCH',
         data: { profile: {
-          first_name: $('#first-name').val(),
-          last_name: $('#last-name').val(),
-          description: $("#description").val(),
-          profile_picture: event.target.result,
-          user_id: id
+          first_name: $('#first-name-update').val(),
+          last_name: $('#last-name-update').val(),
+          description: $("#description-update").val(),
+          profile_picture: event.target.result
         } },
         headers: {
           Authorization: 'Token token=' + token
         }
       }).done(function(data){
         console.log('Success');
+        // var firstName = data.first_name;
+        // var lastName = data.last_name;
+        // var description = data.description;
+        // var photo = data.profile_picture_file_name;
+
+        // $(".edit-profile-page").hide();
+        // $(".profile-description").append("<h4>" + firstName + ' ' + lastName + "</h4>" + "<p>" + description + "</p>");
+        // $(".profile-picture").append("<img src=" + aws_profiles_url + id + '/medium/' + photo + ">")
+        // $(".user-profile").show();
+        // $(".edit-profile").show();
+        // $("#delete-profile").show();
+        // $("#profile").show();
       }).fail(function(response){
         console.error('Whoops!');
       })
