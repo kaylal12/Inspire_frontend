@@ -50,6 +50,8 @@ $(document).ready(function() {
       $("#logout").show();
       $(".page-content").hide();
       $(".create-user-profile").show();
+      $(".edit-profile").hide();
+      $("#delete-profile").hide();
       token = data.user.token;
       id = data.user.id;
     }).fail(function(){
