@@ -5,31 +5,32 @@
   <title>Inspire</title>
 
   <link rel="stylesheet" type="text/css" href="styles/reset.css">
+  <!-- <link rel="stylesheet" type="text/css" href="styles/bootstrap.css"> -->
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
-  <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
 </head>
 
 <body>
 
   <div class="wrapper">
 
-    <div class="header">
-      <div class="login-wrapper">
-        <form id="login">
-          <input id="user_email" type="text" placeholder="email">
-          <input id="user_password" type="password" placeholder="password">
-          <input name="login" type="submit" value="Login">
-        </form>
-        <a href="#" id="open-register">Not a user? Sign up!</a>
-
-        <a href="#" class="edit-profile">Edit</a>
-        <button id="logout" type="button">Logout</button>
-      </div>
-    </div>
-
     <div class="page-content">
       <div class="background-image">
-        <!-- <div class="title"></div> -->
+        <div class="center">
+          <h1>INSPIRE</h1>
+          <p>Art doesnt have to be pretty. It has to be meaningful.</p>
+        </div>
+        <div class="header">
+          <div class="login-wrapper">
+            <form id="login">
+              <input id="user_email" type="text" placeholder="email">
+              <input id="user_password" type="password" placeholder="password">
+              <input name="login" type="submit" value="Login">
+            </form>
+            <a href="#" id="open-register">Not a user? Sign up!</a>
+
+            <button id="logout" type="button">Logout</button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -70,34 +71,38 @@
   </div>
 
     <div class="user-profile">
+      <a href="#" class="edit-profile">Edit</a>
+        <a href="#" id="delete-profile">Delete</a>
       <div class="created-profile">
-        <input id="delete-profile" type="button" value="Delete">
         <div class="profile-picture"></div>
         <div class="profile-description"></div>
         <div class="profile-images">
-          <!-- <form id="image-upload">
-            <label> Caption
-              <input type="text" id="caption">
-            </label>
-            <label> Upload Image
-              <input type="file" id="image">
-            </label>
-            <input name="post" type="submit" value="Create Post">
-          </form> -->
+          <div class="upload-box">
+            <form id="image-upload">
+              <label> Caption
+                <input type="text" id="caption">
+              </label>
+              <label> Upload Image
+                <input type="file" id="image">
+              </label>
+              <input name="post" type="submit" value="Create Post">
+            </form>
+          </div>
         </div>
       </div>
 
     </div>
 
     <div class="explore-profiles">
-      <div class="profile-row">
-        <div class="col-md-4"></div>
-        <div class="col-md-8"></div>
+      <ul class="user info"></ul>
+      <!-- <div class="profile-row">
+        <div class="people"></div>
+        <div class="desc"></div>
       </div>
       <div class="profile-row">
-        <div class="col-md-4"></div>
-        <div class="col-md-8"></div>
-      </div>
+        <div class="people"></div>
+        <div class="desc"></div>
+      </div> -->
     </div>
 
     <div class="explore-photos">
@@ -142,7 +147,10 @@
         </li>
       </ul>
       <div class="footer">
-        <p>Created by</p>
+        <p>
+          Created by
+          <a href="github.com/kaylal12">&hearts;</a>
+        </p>
       </div>
   </div>
 

@@ -1,9 +1,18 @@
+@font-face {
+  font-family: Amatic;
+  src: url(fonts/Amatic-Bold.ttf);
+}
+
+html {
+  font-family: Amatic;
+}
+
 /*SIDEBAR; stays throughout webpage*/
 .sidebar-wrapper {
   position: fixed;
   width: 20%;
   height: 100%;
-  background-color: #D4EDF4;
+  background-color: #FAC8BF;
   padding-left: 0;
   top: 0;
   bottom: 0;
@@ -17,6 +26,7 @@
   background-size: cover;
   margin: auto;
   border-radius: 50%;
+  padding: 10px;
 }
 
 .sidebar-nav {
@@ -38,7 +48,9 @@
 }
 
 .sidebar-nav a {
-  padding-top: 10px;
+  font-size: 24px;
+  padding-top: 25px;
+  padding-left: 10px;
   text-decoration: none;
   color: #5D5D5D;
   display: block;
@@ -46,7 +58,7 @@
 
 .sidebar-nav a:hover {
   color: black;
-  background: white;
+  background: #CCCCCC;
 }
 
 .sidebar-nav li {
@@ -66,7 +78,11 @@
 
 .footer p {
   text-align: center;
-  font-size: 10px;
+  font-size: 14px;
+}
+
+.footer a {
+  color: white;
 }
 
 /*PAGE WRAPPER*/
@@ -83,14 +99,34 @@
 .header {
   position: absolute;
   width: 100%;
-  height: 15%;
-  /*background-color: pink;
-*/}
+}
+.center {
+  position: absolute;
+  width: 50%;
+  height: 25%;
+  top: 250px;
+  right: 290px;
+  background-color: #FAC8BF;
+  border-radius: 10%;
+}
+
+h1 {
+  font-size: 72px;
+  text-align: center;
+  color: grey;
+  padding: 15px;
+}
+
+p {
+  color: grey;
+  font-size: 20px;
+  text-align: center;
+}
 
 .login-wrapper {
   float: right;
   display: inline-block;
-  padding: 15px
+  padding: 15px;
 }
 
 .login-wrapper a {
@@ -174,10 +210,10 @@
   /*display: none;*/
   position: absolute;
   width: 80%;
-  height: 85%;
+  height: 100%;
   clear: right;
   /*background-color: blue;*/
-  top: 70px;
+  /*top: 70px;*/
   right: 0;
 }
 
@@ -185,9 +221,10 @@
   position: relative;
   float: right;
   width: 100%;
-  height: 90%;
-  background-image: url('test-images/background.jpg');
-  background-size: cover;
+  height: 100%;
+  background-image: url('test-images/art.jpg');
+  background-size: 100% 100%;
+  opacity: 0.75;
 }
 
 /*USER PROFILE*/
@@ -195,7 +232,7 @@
   position: absolute;
   display: none;
   width: 100%;
-  height: 80%;
+  height: 100%;
   float: right;
   top: 0;
   /*background-color: pink;*/
@@ -210,6 +247,16 @@
 
 #edit-profile-page {
   display: none;
+}
+
+.edit-profile {
+  position: absolute;
+  right: 100px;
+}
+
+#delete-profile {
+  position: absolute;
+  right: 50px;
 }
 
 /*.created-profile {
@@ -240,9 +287,31 @@
   position: absolute;
   width: 830px;
   height: 350px;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   bottom: 10px;
   right: 150px;
+}
+
+.upload-box {
+  position: relative;
+  /*background-color: lightpink;*/
+  width: 350px;
+  height: 150px;
+}
+
+/*EXPLORE PROFILES*/
+.explore-profiles {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  float: right;
+  top: 0;
+  /*background-color: pink;*/
+}
+
+.user-info {
+  text-decoration: none;
 }
 
 /*SINGLE IMAGE*/
@@ -259,8 +328,8 @@
 .image-box {
   position: absolute;
   background-color: #D4EDF4;
-  width: 550px;
-  height: 550px;
+  width: 600px;
+  height: 600px;
   top: 45px;
   left: 325px;
   padding: 40px;
