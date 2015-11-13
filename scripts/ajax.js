@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  var inspire_url = 'http://localhost:3000';
-  // var inspire_url = 'https://inspire-app.herokuapp.com/'
+  // var inspire_url = 'http://localhost:3000';
+  var inspire_url = 'https://inspire-app.herokuapp.com/'
   var aws_profiles_url = 'https://s3.amazonaws.com/inspireapp/profiles/profile_pictures/000/000/00';
   var aws_images_url = 'https://s3.amazonaws.com/inspireapp/images/image_post/000/000/00';
   var token = '';
