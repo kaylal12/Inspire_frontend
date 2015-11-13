@@ -190,15 +190,14 @@
   background-size: cover;
 }
 
-/*USER PROFILE*/
-.user-profile {
+/*CREATE USER PROFILE*/
+.create-user-profile {
   position: absolute;
   display: none;
-  width: 100%;
+  width: 80%;
   height: 100%;
   float: right;
   top: 0;
-  background-color: pink;
 }
 
 #create-profile {
@@ -207,14 +206,46 @@
   left: 25%;
 }
 
-#image-upload {
+/*EDIT PROFILE*/
+.edit-profile {
+  display: none;
+}
+
+#delete-profile {
+  display: none;
+}
+
+.edit-profile-page {
   position: absolute;
-  top: 100px;
+  display: none;
+  width: 80%;
+  height: 100%;
+  float: right;
+  top: 0;
+}
+
+#edit-profile {
+  position: absolute;
+  top: 50px;
   left: 25%;
 }
 
-.created-profile {
+/*USER PROFILE*/
+.user-profile {
+  position: absolute;
   display: none;
+  width: 80%;
+  height: 100%;
+  float: right;
+  top: 0;
+  /*background-color: pink;*/
+}
+
+#image-upload {
+  display: none;
+  position: absolute;
+  top: 150px;
+  left: 25%;
 }
 
 .profile-picture {

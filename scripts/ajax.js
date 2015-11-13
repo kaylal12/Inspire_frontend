@@ -1,5 +1,7 @@
 $(document).ready(function() {
   var inspire_url = 'http://localhost:3000';
+  var aws_profiles_url = 'https://s3.amazonaws.com/inspireapp/profiles/profile_pictures/000/000/00';
+  var awd_images_url = 'https://s3.amazonaws.com/inspireapp/images/image_post/000/000/0';
   var token = '';
   var id = '';
   var image_id = '';
@@ -46,7 +48,8 @@ $(document).ready(function() {
       $("#login").hide();
       $("#open-register").hide();
       $("#logout").show();
-      $("#profile").show();
+      $(".page-content").hide();
+      $(".create-user-profile").show();
       token = data.user.token;
       id = data.user.id;
     }).fail(function(){
@@ -65,13 +68,17 @@ $(document).ready(function() {
     }).done(function(){
       $("#login").show();
       $("#open-register").show();
+      $(".page-content").hide();
+      $(".user-profile").hide();
+      $(".explore-profiles").hide();
+      $(".explore-photos").hide();
     }).fail(function(){
       console.log("error");
     })
   });
 
   // 'GET' /profiles REQUEST
-  $("#profiles").on('click', function(event){
+  $(".explore-profiles").on('click', function(event){
     $.ajax({
       method: 'GET',
       url: inspire_url + '/profiles',
@@ -104,6 +111,18 @@ $(document).ready(function() {
         }
       }).done(function(data){
         console.log('Success');
+        var firstName = data.first_name;
+        var lastName = data.last_name;
+        var description = data.description;
+        var photo = data.profile_picture_file_name;
+
+        $(".create-user-profile").hide();
+        $(".profile-description").append("<h4>" + firstName + ' ' + lastName + "</h4>" + "<p>" + description + "</p>");
+        $(".profile-picture").append("<img src=" + aws_profiles_url + id + '/medium/' + photo + ">")
+        $(".user-profile").show();
+        $(".edit-profile").show();
+        $("#delete-profile").show();
+        $("#profile").show();
       }).fail(function(response){
         console.error('Whoops!');
       })
@@ -115,23 +134,29 @@ $(document).ready(function() {
   });
 
   // 'GET' /profiles/id REQUEST
-  // $("").on('click', function(event){
-    // $.ajax({
-      // method: 'GET',
-      // url: inspire_url + '/profiles/' + id,
-      // headers: {
-        // Authorization: 'Token token=' + token
-      // },
-      // contentType: 'application/json'
-    // }).done(function(){
-      // console.log("success");
-    // }).fail(function(){
-      // console.log("error")
-    // })
-  // });
+  $("#profile").on('click', function(event){
+    $.ajax({
+      method: 'GET',
+      url: inspire_url + '/profiles/' + id,
+      headers: {
+        Authorization: 'Token token=' + token
+      },
+      contentType: 'application/json'
+    }).done(function(){
+      console.log("success");
+      $(".page-content").hide();
+      $(".explore-profiles").hide();
+      $(".explore-photos").hide();
+      $(".user-profile").show();
+      $(".edit-profile").show();
+      $("#delete-profile").show();
+    }).fail(function(){
+      console.log("error")
+    })
+  });
 
   // 'PATCH' /profiles/id REQUEST
-  $('#edit-profile').on('click', function(e){
+  $('#edit-profile').on('submit', function(e){
     e.preventDefault();
     var reader = new FileReader();
 

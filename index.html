@@ -22,6 +22,8 @@
         </form>
         <a href="#" id="open-register">Not a user? Sign up!</a>
 
+        <a href="#" class="edit-profile">Edit</a>
+        <a href="#" id="delete-profile">Delete</a>
         <button id="logout" type="button">Logout</button>
       </div>
     </div>
@@ -32,36 +34,44 @@
       </div>
     </div>
 
+  <div class="create-user-profile">
+    <form id="create-profile">
+      <label> First Name
+        <input id="first-name" type="text">
+      </label>
+      <label> Last Name
+        <input id="last-name" type="text">
+      </label>
+      <label> Description
+        <input id="description" type="text">
+      </label>
+      <label> Upload Profile Picture
+        <input id="profile-picture" type="file">
+      </label>
+      <input name="profile" type="submit" value="Create Profile">
+     </form>
+  </div>
+
+  <div class="edit-profile-page">
+    <form id="edit-profile">
+      <label> First Name
+        <input id="first-name" type="text">
+      </label>
+      <label> Last Name
+        <input id="last-name" type="text">
+      </label>
+      <label> Description
+        <input id="description" type="text">
+      </label>
+      <label> Upload Profile Picture
+        <input id="profile-picture" type="file">
+      </label>
+      <input name="profile" type="submit" value="Update Profile">
+     </form>
+  </div>
+
     <div class="user-profile">
-      <form id="create-profile">
-        <label> First Name
-          <input id="first-name" type="text">
-        </label>
-        <label> Last Name
-          <input id="last-name" type="text">
-        </label>
-        <label> Description
-          <input id="description" type="text">
-        </label>
-        <label> Upload Profile Picture
-          <input id="profile-picture" type="file">
-        </label>
-        <input name="profile" type="submit" value="Create Profile">
-      </form>
-
-      <form id="image-upload">
-        <label> Caption
-          <input type="text" id="caption">
-        </label>
-        <label> Upload Image
-          <input type="file" id="image">
-        </label>
-        <input name="post" type="submit" value="Create Post">
-      </form>
-
       <div class="created-profile">
-        <input id="delete-profile" type="button" value="Delete">
-        <input id="edit-profile" type="button" value="Edit">
         <div class="profile-picture"></div>
         <div class="profile-description"></div>
         <div class="profile-images">
