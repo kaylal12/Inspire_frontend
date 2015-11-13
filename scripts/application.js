@@ -22,12 +22,7 @@ $(document).ready(function(){
   });
 
   $(".edit-profile").on('click', function(event){
-    $(".page-content").hide();
-    $(".user-profile").hide();
-    $(".explore-profiles").hide();
-    $(".explore-photos").hide();
-    $("#delete-profile").show();
-    $(".edit-profile-page").show();
+    $("#edit-profile").show();
   });
 
 });

@@ -99,7 +99,9 @@ html {
 .header {
   position: absolute;
   width: 100%;
+  height: 20%;
 }
+
 .center {
   position: absolute;
   width: 50%;
@@ -231,14 +233,14 @@ p {
 .create-user-profile {
   position: absolute;
   display: none;
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  height: 80%;
   float: right;
   top: 0;
 }
 
 #create-profile {
-  display: none;
+  /*display: none;*/
   position: absolute;
   top: 50px;
   left: 25%;
@@ -246,47 +248,25 @@ p {
 
 
 /*EDIT PROFILE*/
-.edit-profile-page {
-  display: none;
+.edit-profile {
+  position: absolute;
+  right: 10px;
 }
 
-.edit-profile {
+#delete-profile {
   position: absolute;
   right: 100px;
 }
 
-#delete-profile {
-  position: absolute;
-  right: 50px;
-}
-
-/*.created-profile {
->>>>>>> layout
-  display: none;
-}
-
-#delete-profile {
-  display: none;
-}
-
-.edit-profile-page {
-  position: absolute;
-  display: none;
-  width: 80%;
-  height: 100%;
-  float: right;
-  top: 0;
-}
-
 #edit-profile {
   position: absolute;
-  top: 50px;
-  left: 25%;
+  display: none;
+  top: 150px;
 }
 
 /*USER PROFILE*/
 .user-profile {
-  position: absolute;
+  float: right;
   display: none;
   width: 80%;
   height: 100%;
@@ -320,6 +300,18 @@ p {
   border-radius: 10%;
   right: 150px;
   top: 60px;
+}
+
+.profile-description h4 {
+  font-size: 32px;
+  text-align: center;
+  padding: 10px;
+}
+
+.profile-description p {
+  font-size: 22px;
+  text-align: left;
+  padding: 10px;
 }
 
 .profile-images {

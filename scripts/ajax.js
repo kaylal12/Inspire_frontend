@@ -75,6 +75,7 @@ $(document).ready(function() {
       $(".edit-profile-page").hide();
       $(".explore-profiles").hide();
       $(".explore-photos").hide();
+      $(".page-content").show();
     }).fail(function(){
       console.log("error");
     })
@@ -158,46 +159,29 @@ $(document).ready(function() {
     })
   });
 
-  // 'PATCH' /profiles/id REQUEST
+  // 'PATCH' /profiles/id REQUEST description
   $('#edit-profile').on('submit', function(e){
     e.preventDefault();
-    var reader = new FileReader();
 
-    reader.onload = function(event){
-      $.ajax({
-        url: inspire_url + '/profiles/' + id,
-        method: 'PATCH',
-        data: { profile: {
-          first_name: $('#first-name-update').val(),
-          last_name: $('#last-name-update').val(),
-          description: $("#description-update").val(),
-          profile_picture: event.target.result
-        } },
-        headers: {
-          Authorization: 'Token token=' + token
-        }
-      }).done(function(data){
-        console.log('Success');
-        // var firstName = data.first_name;
-        // var lastName = data.last_name;
-        // var description = data.description;
-        // var photo = data.profile_picture_file_name;
+    $.ajax({
+      url: inspire_url + '/profiles/' + id,
+      method: 'PATCH',
+      data: { profile: {
+        description: $("#update-desc").val()
+      } },
+      headers: {
+        Authorization: 'Token token=' + token
+      }
+    }).done(function(data){
+      console.log('Success');
+      var description = data.description;
 
-        // $(".edit-profile-page").hide();
-        // $(".profile-description").append("<h4>" + firstName + ' ' + lastName + "</h4>" + "<p>" + description + "</p>");
-        // $(".profile-picture").append("<img src=" + aws_profiles_url + id + '/medium/' + photo + ">")
-        // $(".user-profile").show();
-        // $(".edit-profile").show();
-        // $("#delete-profile").show();
-        // $("#profile").show();
+      $(".profile-description").append("<p>" + description + "</p>");
+      $(".user-profile").show();
+      $("#profile").show();
       }).fail(function(response){
         console.error('Whoops!');
       })
-    };
-
-    $fileInput = $('#profile-picture');
-    reader.readAsDataURL($fileInput[0].files[0]);
-
   });
 
   // 'DELETE' /profiles/id REQUEST
@@ -210,6 +194,8 @@ $(document).ready(function() {
       }
     }).done(function(){
       console.log("success");
+      $(".user-profile").hide();
+      $(".page-content").show();
     }).fail(function(){
       console.log("error");
     })

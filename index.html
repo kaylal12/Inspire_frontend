@@ -19,18 +19,19 @@
           <h1>INSPIRE</h1>
           <p>Art doesnt have to be pretty. It has to be meaningful.</p>
         </div>
-        <div class="header">
-          <div class="login-wrapper">
-            <form id="login">
-              <input id="user_email" type="text" placeholder="email">
-              <input id="user_password" type="password" placeholder="password">
-              <input name="login" type="submit" value="Login">
-            </form>
-            <a href="#" id="open-register">Not a user? Sign up!</a>
+      </div>
+    </div>
 
-            <button id="logout" type="button">Logout</button>
-          </div>
-        </div>
+    <div class="header">
+      <div class="login-wrapper">
+         <form id="login">
+            <input id="user_email" type="text" placeholder="email">
+            <input id="user_password" type="password" placeholder="password">
+            <input name="login" type="submit" value="Login">
+          </form>
+          <a href="#" id="open-register">Not a user? Sign up!</a>
+
+          <button id="logout" type="button">Logout</button>
       </div>
     </div>
 
@@ -53,7 +54,7 @@
   </div>
 
 
-  <div class="edit-profile-page">
+  <!-- <div class="edit-profile-page">
     <form id="edit-profile">
       <label> First Name
         <input id="first-name-update" type="text">
@@ -69,14 +70,21 @@
       </label>
       <input name="profile" type="submit" value="Update Profile">
      </form>
-  </div>
+  </div> -->
 
   <div class="user-profile">
-    <a href="#" class="edit-profile">Edit</a>
     <a href="#" id="delete-profile">Delete</a>
     <div class="created-profile">
       <div class="profile-picture"></div>
-      <div class="profile-description"></div>
+      <div class="profile-description">
+        <a href="#" class="edit-profile">Edit</a>
+        <form id="edit-profile">
+          <label> Description
+            <input id="update-desc" type="text">
+          </label>
+          <input name="update" type="submit" value="Update Description">
+        </form>
+      </div>
       <div class="profile-images">
         <div class="upload-box">
           <form id="image-upload">
@@ -105,7 +113,7 @@
       </div> -->
     </div>
 
-    <div class="explore-photos">
+    <!-- <div class="explore-photos">
       <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
@@ -121,7 +129,7 @@
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 
