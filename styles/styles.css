@@ -83,7 +83,7 @@
 .header {
   position: absolute;
   width: 100%;
-  height: 70px;
+  height: 15%;
   /*background-color: pink;
 */}
 
@@ -171,10 +171,10 @@
 
 /*INDEX*/
 .page-content {
-  display: none;
+  /*display: none;*/
   position: absolute;
   width: 80%;
-  height: 650px;
+  height: 85%;
   clear: right;
   /*background-color: blue;*/
   top: 70px;
@@ -193,18 +193,23 @@
 /*USER PROFILE*/
 .user-profile {
   position: absolute;
-  /*display: none;*/
+  display: none;
   width: 100%;
-  height: 100%;
+  height: 80%;
   float: right;
   top: 0;
-  background-color: pink;
+  /*background-color: pink;*/
 }
 
 #create-profile {
+  display: none;
   position: absolute;
   top: 50px;
   left: 25%;
+}
+
+#edit-profile-page {
+  display: none;
 }
 
 /*.created-profile {
@@ -215,8 +220,8 @@
   position: absolute;
   width: 300px;
   height: 300px;
-  background-color: lightblue;
-  left: 300px;
+  /*background-color: lightblue;*/
+  right: 675px;
   top: 10px;
 }
 
@@ -224,7 +229,9 @@
   position: absolute;
   width: 500px;
   height: 250px;
-  background-color: lightgreen;
+  /*background-color: lightgreen;*/
+  border: 1px solid grey;
+  border-radius: 10%;
   right: 150px;
   top: 60px;
 }
