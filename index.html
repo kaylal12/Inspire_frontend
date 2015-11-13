@@ -53,29 +53,17 @@
      </form>
   </div>
 
-
-  <!-- <div class="edit-profile-page">
-    <form id="edit-profile">
-      <label> First Name
-        <input id="first-name-update" type="text">
-      </label>
-      <label> Last Name
-        <input id="last-name-update" type="text">
-      </label>
-      <label> Description
-        <input id="description-update" type="text">
-      </label>
-      <label> Upload Profile Picture
-        <input id="profile-picture-update" type="file">
-      </label>
-      <input name="profile" type="submit" value="Update Profile">
-     </form>
-  </div> -->
-
   <div class="user-profile">
     <a href="#" id="delete-profile">Delete</a>
     <div class="created-profile">
-      <div class="profile-picture"></div>
+      <div class="profile-picture">
+        <form id="change-photo">
+          <label> Change Profile Picture
+            <input id="update-photo" type="file">
+          </label>
+          <input name="pro-pic" type="submit" value="Upload">
+        </form>
+      </div>
       <div class="profile-description">
         <a href="#" class="edit-profile">Edit</a>
         <form id="edit-profile">

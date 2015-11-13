@@ -86,6 +86,7 @@ $(document).ready(function() {
     $.ajax({
       method: 'GET',
       url: inspire_url + '/profiles',
+      data: JSON.stringify(data),
       contentType: 'application/json'
     }).done(function(data){
       console.log("success");
@@ -182,6 +183,36 @@ $(document).ready(function() {
       }).fail(function(response){
         console.error('Whoops!');
       })
+  });
+
+ // 'PATCH' /profiles/id REQUEST picture
+  $('#change-photo').on('submit', function(e){
+    e.preventDefault();
+    var reader = new FileReader();
+
+    reader.onload = function(event){
+      $.ajax({
+        url: inspire_url + '/profiles/' + id,
+        method: 'POST',
+        data: { profile: {
+          profile_picture: event.target.result
+        } },
+        headers: {
+          Authorization: 'Token token=' + token
+        }
+      }).done(function(data){
+        console.log('Success');
+        var photo = data.profile_picture_file_name;
+
+        $(".profile-picture").append("<img src=" + aws_profiles_url + id + '/medium/' + photo + ">")
+      }).fail(function(response){
+        console.error('Whoops!');
+      })
+    };
+
+    $fileInput = $('#profile-picture');
+    reader.readAsDataURL($fileInput[0].files[0]);
+
   });
 
   // 'DELETE' /profiles/id REQUEST
