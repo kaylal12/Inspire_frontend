@@ -8,9 +8,6 @@ $(document).ready(function(){
     $(".user-profile").hide();
     $(".explore-profiles").hide();
     $(".explore-photos").hide();
-    $("#delete-profile").hide();
-    $(".edit-profile").hide();
-    $("#edit-profile").hide();
   });
 
   $("#open-register").on('click', function(event){
@@ -24,5 +21,11 @@ $(document).ready(function(){
   $(".edit-profile").on('click', function(event){
     $("#edit-profile").show();
   });
+
+  $("#profiles").on('click', function(event){
+    $(".page-content").hide();
+    $(".user-profile").hide();
+    $(".explore-profiles").show();
+  })
 
 });

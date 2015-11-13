@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var inspire_url = 'http://localhost:3000';
   var aws_profiles_url = 'https://s3.amazonaws.com/inspireapp/profiles/profile_pictures/000/000/00';
-  var awd_images_url = 'https://s3.amazonaws.com/inspireapp/images/image_post/000/000/0';
+  var aws_images_url = 'https://s3.amazonaws.com/inspireapp/images/image_post/000/000/00';
   var token = '';
   var id = '';
   var image_id = '';
@@ -50,8 +50,6 @@ $(document).ready(function() {
       $("#logout").show();
       $(".page-content").hide();
       $(".create-user-profile").show();
-      $(".edit-profile").hide();
-      $("#delete-profile").hide();
       token = data.user.token;
       id = data.user.id;
     }).fail(function(){
@@ -81,14 +79,19 @@ $(document).ready(function() {
     })
   });
 
+  var profilesShowTemplate = Handlebars.compile($('#profiles-show').html());
+
   // 'GET' /profiles REQUEST
-  $(".explore-profiles").on('click', function(event){
+  $("#profiles").on('click', function(event){
     $.ajax({
       method: 'GET',
       url: inspire_url + '/profiles',
-      data: JSON.stringify(data),
+      // data: JSON.stringify([{}]),
       contentType: 'application/json'
     }).done(function(data){
+      var newHtml = data.profiles.map(profilesShowTemplate).reduce(function(a,b){return a + b;});
+      $(".user-info").html(newHtml);
+
       console.log("success");
     }).fail(function(){
       console.log("error");
@@ -263,8 +266,9 @@ $(document).ready(function() {
           Authorization: 'Token token=' + token
         }
       }).done(function(data){
-        image_id = data.user.profile.images.find(params[id]);
         console.log('Success');
+        var photo = data.image_post_file_name;
+        $(".photo").append("<img src=" + aws_images_url + id + '/thumbnail/' + photo + ">")
       }).fail(function(response){
         console.error('Whoops!');
       })

@@ -286,13 +286,6 @@ p {
   /*background-color: pink;*/
 }
 
-#image-upload {
-  display: none;
-  position: absolute;
-  top: 150px;
-  left: 25%;
-}
-
 .profile-picture {
   position: absolute;
   width: 300px;
@@ -334,26 +327,51 @@ p {
   right: 150px;
 }
 
+.photo {
+  /*background-color: purple;*/
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  left: 300px;
+}
+
 .upload-box {
-  position: relative;
+  position: absolute;
   /*background-color: lightpink;*/
   width: 350px;
   height: 150px;
 }
 
+#image-upload {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  display: inline-block;
+}
+
 /*EXPLORE PROFILES*/
 .explore-profiles {
-  position: absolute;
+  position: relative;
   display: none;
-  width: 100%;
+  width: 80%;
   height: 100%;
   float: right;
   top: 0;
-  /*background-color: pink;*/
+  background-color: pink;
 }
 
 .user-info {
+  position: absolute;
   text-decoration: none;
+}
+
+.user-info li h4 {
+  font-size: 26px;
+  text-decoration: bold;
+}
+
+.user-info li p {
+  font-size: 22px;
 }
 
 /*SINGLE IMAGE*/
